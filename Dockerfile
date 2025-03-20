@@ -17,4 +17,4 @@ COPY --from=build /app/app.jar .
 RUN useradd runtime
 USER runtime
 
-ENTRYPOINT [ "java, "-Dserver.ports=${PORT}", "-jar", "app.jar" ]
+ENTRYPOINT [ "java", "-Dserver.ports=${PORT}", "-jar", "app.jar" ]
