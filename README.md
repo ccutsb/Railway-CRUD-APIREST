@@ -141,4 +141,4 @@ curl -X DELETE http://localhost:8080/productos/1
 
 ## Licencia
 
-Este proyecto está licenciado bajo [tu licencia] - consulta el archivo LICENSE para más detalles. 
+Este proyecto está licenciado bajo [MIT](LICENSE) - consulta el archivo LICENSE para más detalles. 
