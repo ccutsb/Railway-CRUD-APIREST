@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+server:
+  forward-headers-strategy: framework
+
+app:
+  bootstrap:
+    admin:
+      enabled: ${BOOTSTRAP_ADMIN_ENABLED:false}

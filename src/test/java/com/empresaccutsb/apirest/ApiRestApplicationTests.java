@@ -1,13 +1,11 @@
-package com.empresaccutsb.apirest.apirest;
+package com.empresaccutsb.apirest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApirestApplicationTests {
+class ApiRestApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
-
+    @Test
+    void contextLoads() {}
 }

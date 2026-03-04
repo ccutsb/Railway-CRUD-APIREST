@@ -1,0 +1,66 @@
+### Variables
+@baseUrl = http://localhost:8080
+
+### Register
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "username": "manager1",
+  "email": "manager1@mail.com",
+  "password": "Password1"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "manager1",
+  "password": "Password1"
+}
+
+### Set token manually from login response
+@accessToken = REPLACE_ME
+@refreshToken = REPLACE_ME
+
+### Create product (ADMIN/MANAGER)
+POST {{baseUrl}}/api/v1/productos
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "nombre": "Laptop Enterprise",
+  "descripcion": "ThinkPad para equipo backend",
+  "precio": 1650.50
+}
+
+### List products with filters
+GET {{baseUrl}}/api/v1/productos?page=0&size=20&sort=createdAt,desc&search=laptop
+Authorization: Bearer {{accessToken}}
+
+### Soft delete (ADMIN)
+DELETE {{baseUrl}}/api/v1/productos/1
+Authorization: Bearer {{accessToken}}
+
+### Restore (ADMIN)
+POST {{baseUrl}}/api/v1/productos/1/restore
+Authorization: Bearer {{accessToken}}
+
+### Refresh token
+POST {{baseUrl}}/api/v1/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### Logout
+POST {{baseUrl}}/api/v1/auth/logout
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
